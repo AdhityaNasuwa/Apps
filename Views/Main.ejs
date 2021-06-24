@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% tool.forEach(tol => { %>
+
+  <div class="col">
+    <div class="card">
+      <div class="card-body" style="font-size: 18px">
+        <h5 class="card-title" style="font-family: 'Metal Mania', cursive">
+          <%= tol.Nama %>
+        </h5>
+        <p class="card-text"><%= tol.Des %></p>
+        <a href="/Tools/<%= tol.link %>" target="_blank"
+          >Kunjungi &longrightarrow;</a
+        >
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
