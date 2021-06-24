@@ -1,8 +1,8 @@
-const fs = require("fs");
-exports.Main = (req, res) => {
-  const tools = fs.readFileSync("./Str/Tools.json", "utf-8");
-  const tool = JSON.parse(tools);
-  const result = tool.find((tool) => tool.link === req.params.id);
+require("../Models/BaseModel");
+const Tools = require("../Models/ClientModel");
+
+exports.Main = async (req, res) => {
+  const result = await Tools.findOne({ Link: req.params.id });
   if (!result) {
     res.json({
       Error: 404,

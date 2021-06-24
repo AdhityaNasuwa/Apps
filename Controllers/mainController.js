@@ -1,5 +1,5 @@
 require("../Models/BaseModel");
-const ClientApps = require("../Models/ClientModel");
+const Tools = require("../Models/ClientModel");
 const fs = require("fs");
 
 // Random TEXT
@@ -14,9 +14,11 @@ function getRandomText(length) {
   return result;
 }
 
-exports.Main = (req, res) => {
-  const tools = fs.readFileSync("./Str/Tools.json", "utf-8");
-  const tool = JSON.parse(tools);
+exports.Main = async (req, res) => {
+  const tool = await Tools.find();
+  // const tools = fs.readFileSync("./Str/Tools.json", "utf-8");
+  // const tool = JSON.parse(tools);
+
   res.render("Main", {
     layout: "Layouts/main-page",
     tool,
