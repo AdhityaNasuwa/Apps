@@ -19,7 +19,7 @@ exports.Main = async (req, res) => {
   // const tools = fs.readFileSync("./Str/Tools.json", "utf-8");
   // const tool = JSON.parse(tools);
 
-  res.render("Main", {
+  res.render("main", {
     layout: "Layouts/main-page",
     tool,
   });
